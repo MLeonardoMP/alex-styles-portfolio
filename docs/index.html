@@ -10,33 +10,54 @@
     <div class="container">
         <!-- Header -->
         <header class="site-header">
-            <div class="logo">Alex Styles</div>
+            <div class="logo" aria-label="Marca">
+                <span lang="es">Alex Styles</span><span lang="en">Alex Styles</span>
+            </div>
             <nav class="site-nav">
-                <a href="#about" class="nav-link" aria-label="Ir a sección Sobre mí" data-tooltip="Conoce más sobre mí">Sobre mí</a>
-                <a href="#work" class="nav-link" aria-label="Ir a sección Portafolio" data-tooltip="Ver mis proyectos">Proyectos</a>
-                <a href="#contact" class="nav-link" aria-label="Ir a sección Contacto" data-tooltip="Envíame un mensaje">Contacto</a>
+                <a href="#about" class="nav-link" aria-label="Ir a sección Sobre mí" data-tooltip="Conoce más sobre mí"><span lang="es">Sobre mí</span><span lang="en">About</span></a>
+                <a href="#work" class="nav-link" aria-label="Ir a sección Portafolio" data-tooltip="Ver mis proyectos"><span lang="es">Proyectos</span><span lang="en">Work</span></a>
+                <a href="#contact" class="nav-link" aria-label="Ir a sección Contacto" data-tooltip="Envíame un mensaje"><span lang="es">Contacto</span><span lang="en">Contact</span></a>
             </nav>
+            <div class="toggles" aria-label="Preferencias">
+                <label class="switch" aria-label="Cambiar tema" title="Tema claro/oscuro">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider"></span>
+                </label>
+                <select id="lang-toggle" aria-label="Cambiar idioma">
+                    <option value="es">ES</option>
+                    <option value="en">EN</option>
+                </select>
+            </div>
         </header>
 
         <!-- Hero / About -->
         <section id="about" class="section about-section">
-            <h1 class="headline fade-in">Diseñador Gráfico &<br>Desarrollador Web.</h1>
-            <p class="subheadline fade-in delay-1">Creo experiencias digitales minimalistas y funcionales.</p>
+            <h1 class="headline fade-in">
+                <span lang="es">Diseñador Gráfico &<br>Desarrollador Web.</span>
+                <span lang="en">Graphic Designer &<br>Frontend Developer.</span>
+            </h1>
+            <p class="subheadline fade-in delay-1">
+                <span lang="es">Creo experiencias digitales minimalistas y funcionales.</span>
+                <span lang="en">I craft minimalist, functional digital experiences.</span>
+            </p>
             <p class="bio fade-in delay-2">
-                Hola, soy Alex. Especializado en diseño de interfaces y desarrollo frontend. 
-                Mi enfoque es la simplicidad y el rendimiento, eliminando lo innecesario para dejar que el contenido brille.
+                <span lang="es">Hola, soy Alex. Especializado en diseño de interfaces y desarrollo frontend. Mi enfoque es la simplicidad y el rendimiento, eliminando lo innecesario para dejar que el contenido brille.</span>
+                <span lang="en">Hi, I’m Alex. I focus on UI design and frontend development. My approach is simplicity and performance, letting the content shine.</span>
             </p>
         </section>
 
         <!-- Portfolio -->
         <section id="work" class="section work-section">
-            <h2 class="section-title">Proyectos Seleccionados</h2>
+            <h2 class="section-title">
+                <span lang="es">Proyectos Seleccionados</span>
+                <span lang="en">Selected Projects</span>
+            </h2>
             <div class="grid layout-grid">
                 <!-- Project 1 -->
                 <article class="card fade-in delay-1">
                     <div class="card-content">
                         <h3>Design System Alpha</h3>
-                        <p>Biblioteca de componentes UI en React.</p>
+                        <p><span lang="es">Biblioteca de componentes UI en React.</span><span lang="en">UI component library in React.</span></p>
                         <button
                             type="button"
                             class="btn-link trigger-modal"
@@ -55,7 +76,7 @@
                 <article class="card fade-in delay-2">
                     <div class="card-content">
                         <h3>E-commerce Minimal</h3>
-                        <p>Rediseño de experiencia de compra.</p>
+                        <p><span lang="es">Rediseño de experiencia de compra.</span><span lang="en">Shopping experience redesign.</span></p>
                         <button
                             type="button"
                             class="btn-link trigger-modal"
@@ -74,7 +95,7 @@
                 <article class="card fade-in">
                     <div class="card-content">
                         <h3>Dash Metrics</h3>
-                        <p>Panel de control para análisis de datos.</p>
+                        <p><span lang="es">Panel de control para análisis de datos.</span><span lang="en">Analytics dashboard.</span></p>
                         <button
                             type="button"
                             class="btn-link trigger-modal"
@@ -94,27 +115,30 @@
 
         <!-- Contact -->
         <section id="contact" class="section contact-section">
-            <h2 class="section-title">Hablemos</h2>
+            <h2 class="section-title"><span lang="es">Hablemos</span><span lang="en">Let’s talk</span></h2>
             <form class="contact-form">
                 <div class="form-group">
-                    <label for="name">Nombre</label>
+                    <label for="name"><span lang="es">Nombre</span><span lang="en">Name</span></label>
                     <input type="text" id="name" name="name" placeholder="Tu nombre" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email"><span lang="es">Email</span><span lang="en">Email</span></label>
                     <input type="email" id="email" name="email" placeholder="tu@email.com" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Mensaje</label>
+                    <label for="message"><span lang="es">Mensaje</span><span lang="en">Message</span></label>
                     <textarea id="message" name="message" rows="4" placeholder="¿En qué puedo ayudarte?" required></textarea>
                 </div>
-                <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                <button type="submit" class="btn-primary"><span lang="es">Enviar Mensaje</span><span lang="en">Send Message</span></button>
             </form>
         </section>
 
         <!-- Footer -->
         <footer class="site-footer">
-            <p>&copy; 2026 Alex Styles. Construido con Copilot.</p>
+            <p>
+                <span lang="es">&copy; 2026 Alex Styles. Construido con Copilot.</span>
+                <span lang="en">&copy; 2026 Alex Styles. Built with Copilot.</span>
+            </p>
         </footer>
     </div>
 
@@ -143,6 +167,47 @@
         const modalRole = document.getElementById('modal-role');
         const modalStack = document.getElementById('modal-stack');
         const modalYear = document.getElementById('modal-year');
+
+        // Theme & Language toggles
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const langToggle = document.getElementById('lang-toggle');
+
+        function applyTheme(theme) {
+            html.dataset.theme = theme;
+            if (themeToggle) themeToggle.checked = theme === 'light';
+            localStorage.setItem('theme', theme);
+        }
+
+        function applyLang(lang) {
+            html.dataset.lang = lang;
+            if (langToggle) langToggle.value = lang;
+            localStorage.setItem('lang', lang);
+        }
+
+        (function initPreferences() {
+            const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+            const storedTheme = localStorage.getItem('theme');
+            const theme = storedTheme || (prefersLight ? 'light' : 'dark');
+            applyTheme(theme);
+
+            const storedLang = localStorage.getItem('lang');
+            const browserLang = navigator.language && navigator.language.toLowerCase().startsWith('en') ? 'en' : 'es';
+            const lang = storedLang || browserLang;
+            applyLang(lang);
+        })();
+
+        if (themeToggle) {
+            themeToggle.addEventListener('change', () => {
+                applyTheme(themeToggle.checked ? 'light' : 'dark');
+            });
+        }
+
+        if (langToggle) {
+            langToggle.addEventListener('change', () => {
+                applyLang(langToggle.value === 'en' ? 'en' : 'es');
+            });
+        }
 
         function openModal(button) {
             if (!modal) return;
