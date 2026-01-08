@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Styles | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="site-header">
+            <div class="logo">Alex Styles</div>
+            <nav class="site-nav">
+                <a href="#about" class="nav-link" aria-label="Ir a sección Sobre mí" data-tooltip="Conoce más sobre mí">Sobre mí</a>
+                <a href="#work" class="nav-link" aria-label="Ir a sección Portafolio" data-tooltip="Ver mis proyectos">Proyectos</a>
+                <a href="#contact" class="nav-link" aria-label="Ir a sección Contacto" data-tooltip="Envíame un mensaje">Contacto</a>
+            </nav>
+        </header>
+
+        <!-- Hero / About -->
+        <section id="about" class="section about-section">
+            <h1 class="headline fade-in">Diseñador Gráfico &<br>Desarrollador Web.</h1>
+            <p class="subheadline fade-in delay-1">Creo experiencias digitales minimalistas y funcionales.</p>
+            <p class="bio fade-in delay-2">
+                Hola, soy Alex. Especializado en diseño de interfaces y desarrollo frontend. 
+                Mi enfoque es la simplicidad y el rendimiento, eliminando lo innecesario para dejar que el contenido brille.
+            </p>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="work" class="section work-section">
+            <h2 class="section-title">Proyectos Seleccionados</h2>
+            <div class="grid layout-grid">
+                <!-- Project 1 -->
+                <article class="card fade-in delay-1">
+                    <div class="card-content">
+                        <h3>Design System Alpha</h3>
+                        <p>Biblioteca de componentes UI en React.</p>
+                        <button
+                            type="button"
+                            class="btn-link trigger-modal"
+                            data-target="modal-1"
+                            data-title="Design System Alpha"
+                            data-desc="Biblioteca de componentes UI con tokens, documentación y patrones reutilizables."
+                            data-role="UI Lead"
+                            data-stack="React, Tailwind, Storybook"
+                            data-year="2025"
+                        >
+                            Ver detalles &rarr;
+                        </button>
+                    </div>
+                </article>
+                <!-- Project 2 -->
+                <article class="card fade-in delay-2">
+                    <div class="card-content">
+                        <h3>E-commerce Minimal</h3>
+                        <p>Rediseño de experiencia de compra.</p>
+                        <button
+                            type="button"
+                            class="btn-link trigger-modal"
+                            data-target="modal-1"
+                            data-title="E-commerce Minimal"
+                            data-desc="Optimización del flujo de compra: jerarquía visual, formularios y microinteracciones."
+                            data-role="Frontend"
+                            data-stack="HTML, CSS, JavaScript"
+                            data-year="2025"
+                        >
+                            Ver detalles &rarr;
+                        </button>
+                    </div>
+                </article>
+                <!-- Project 3 -->
+                <article class="card fade-in">
+                    <div class="card-content">
+                        <h3>Dash Metrics</h3>
+                        <p>Panel de control para análisis de datos.</p>
+                        <button
+                            type="button"
+                            class="btn-link trigger-modal"
+                            data-target="modal-1"
+                            data-title="Dash Metrics"
+                            data-desc="Dashboard de métricas con enfoque en legibilidad, contraste y estructura responsive."
+                            data-role="UI/UX"
+                            data-stack="HTML, CSS"
+                            data-year="2024"
+                        >
+                            Ver detalles &rarr;
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section contact-section">
+            <h2 class="section-title">Hablemos</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="4" placeholder="¿En qué puedo ayudarte?" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Enviar Mensaje</button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <p>&copy; 2026 Alex Styles. Construido con Copilot.</p>
+        </footer>
+    </div>
+
+    <!-- Modal (Hidden by default) -->
+    <div id="modal-1" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h3 id="modal-title">Design System Alpha</h3>
+            <p id="modal-desc">Biblioteca de componentes UI con tokens, documentación y patrones reutilizables.</p>
+            <ul>
+                <li><strong>Rol:</strong> <span id="modal-role">UI Lead</span></li>
+                <li><strong>Stack:</strong> <span id="modal-stack">React, Tailwind, Storybook</span></li>
+                <li><strong>Año:</strong> <span id="modal-year">2025</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Minimal Script for Modal
+        const modal = document.getElementById('modal-1');
+        const triggers = document.querySelectorAll('.trigger-modal');
+        const close = document.querySelector('.close-modal');
+
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+        const modalRole = document.getElementById('modal-role');
+        const modalStack = document.getElementById('modal-stack');
+        const modalYear = document.getElementById('modal-year');
+
+        function openModal(button) {
+            if (!modal) return;
+
+            if (modalTitle) modalTitle.textContent = button.dataset.title || 'Detalles';
+            if (modalDesc) modalDesc.textContent = button.dataset.desc || '';
+            if (modalRole) modalRole.textContent = button.dataset.role || '';
+            if (modalStack) modalStack.textContent = button.dataset.stack || '';
+            if (modalYear) modalYear.textContent = button.dataset.year || '';
+
+            modal.classList.remove('hidden');
+        }
+
+        if (modal && close && triggers.length) {
+            triggers.forEach((trigger) => {
+                trigger.addEventListener('click', () => openModal(trigger));
+            });
+            close.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.classList.add('hidden');
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') modal.classList.add('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
